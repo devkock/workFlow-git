@@ -7,73 +7,12 @@
     <title>Senior Flow</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
             integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <style>
-        .gridButtons {
-            display: grid;
-            gap: 16px;
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @media screen and (min-width: 640px) {
-            .gridButtons {
-                display: grid;
-                gap: 16px;
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media screen and (min-width: 1024px) {
-            .gridButtons {
-                grid-template-columns: repeat(8, 1fr);
-            }
-        }
-
-        .show {
-            display: flex !important;
-            flex-direction: column;
-        }
-
-        #result {
-            background-color: #e9ecef;
-        }
-
-        .border-separator {
-            border: 1px solid black;
-        }
-
-        .bold {
-            font-weight: bold;
-        }
-
-        .story {
-            background-color: blueviolet;
-            color: white;
-        }
-
-        .tamplete {
-            background-color: cadetblue;
-            color: white;
-        }
-
-        .kaizen {
-            background-color: darkkhaki;
-        }
-
-        .contract {
-            background-color: #654982;
-            color: white;
-        }
-
-        .homolog {
-            background-color: #205081;
-            color: white;
-        }
-    </style>
 </head>
 <body>
 <div class="container mt-4">
@@ -82,13 +21,10 @@
             <h1>Senior Sistemas Flow</h1>
             <h2>Selecione a etapa desejada</h2>
 
-            <!-- <div class="gridButtons" id="button-container">
-            </div> -->
-
             <div style="display: flex; gap: 16px; flex-direction: column;">
                 <div style="text-align: left;">
                     <h1>Analyst</h1>
-                    <div class="gridButtons" id="button-container">
+                    <div class="gridButtons" id="button-container-analyst">
                     </div>
                 </div>
                 <div style="text-align: left;">
@@ -97,12 +33,36 @@
                     </div>
                 </div>
                 <div style="text-align: left;">
+                    <h1>Automação de Testes</h1>
+                    <div class="gridButtons" id="button-container-test-automation">
+                    </div>
+                </div>
+                <div style="text-align: left;">
+                    <h1>Backend</h1>
+                    <div class="gridButtons" id="button-container-backend">
+                    </div>
+                </div>
+                <div style="text-align: left;">
+                    <h1>Frontend</h1>
+                    <div class="gridButtons" id="button-container-frontend">
+                    </div>
+                </div>
+                <div style="text-align: left;">
+                    <h1>Estória</h1>
+                    <div class="gridButtons" id="button-container-estoria">
+                    </div>
+                </div>
+                <div style="text-align: left;">
                     <h1>QA</h1>
                     <div class="gridButtons" id="button-container-qa">
                     </div>
                 </div>
+                <div style="text-align: left;">
+                    <h1>Outros Fluxos</h1>
+                    <div class="gridButtons" id="button-container-flow">
+                    </div>
+                </div>
             </div>
-
 
             <div class="container">
                 <div class="row justify-content-center">
@@ -122,124 +82,7 @@
 </div>
 
 
-<script>
-    function populateButtons(jsonFile, containerId) {
-        $.getJSON(jsonFile, (buttonsSettings) => {
-            const buttons = buttonsSettings.map(buttonSetting => `
-                <button class="${buttonSetting.class}" onclick="showTemplate('${buttonSetting.stage}')">
-                    ${buttonSetting.stage}
-                </button>
-            `);
-            
-            const buttonContainer = document.getElementById(containerId);
-            buttonContainer.innerHTML = buttons.join('');
-        });
-    }
-    
-    populateButtons("./data-all.json", 'button-container');
-    populateButtons("./data-develop.json", 'button-container-develop');
-    populateButtons("./data-qa.json", 'button-container-qa');
-    /*populateButtons("./data.json", 'button-container-qa');*/
-
-    function copyToClipboard(element) {
-        var $temp = $("<textarea>");
-        $("body").append($temp);
-        const children = document.getElementById(element).children;
-        const lines = [];
-        for (let i = 0; i < children.length; i++) {
-            lines.push(children.item(i).innerHTML);
-        }
-
-        console.log('lines');
-        console.log(lines);
-        $temp.val(lines.join('')).select();
-        document.execCommand("copy");
-        $temp.remove();
-        const copiedPhrase = document.getElementById('template-copy-phrase');
-        copiedPhrase.className = 'd-flex justify-content-center text-success bold'
-    }
-
-    function showTemplate(status) {
-        $.getJSON("./data.json", (buttonsSettings) => {
-            const copiedPhrase = document.getElementById('template-copy-phrase');
-            copiedPhrase.className = 'd-none'
-            const buttonSetting = buttonsSettings.filter(settings => settings.stage === status)[0];
-            const result = document.getElementById('result');
-            const template = document.getElementById('template');
-            result.className = 'show border mt-3';
-            template.innerHTML = buildTemplate(buttonSetting);
-        });
-    }
-
-    function buildTemplate(stage) {
-        const informations = stage.informations;
-        return `
-            <div>
-                <p class="mb-0 mt-2">
-                    <span class="bold">
-                    Status onde ação deve ocorre:
-                    </span>
-                     ${informations.source.join(',')}
-                </p>
-                <p class="m-0">
-                    <span class="bold">
-                        Autor:
-                    </span> ${informations.author}
-                </p>
-                   <p class="m-0">
-                    <span class="bold">
-                        Flegar task?:
-                    </span>
-                     ${informations.flagged ? informations.flagged:false}
-                </p>
-                <p class="m-0">
-                    <span class="bold">
-                        Mudar Responsável?:
-                    </span>
-                     ${informations.changeAssigned ? 'Sim' : 'Não'}
-                </p>
-                <p class="m-0">
-                    <span class="bold">
-                        Responsável:
-                    </span>
-                     ${informations.assigned ? informations.assigned : 'Não alterar'}
-                </p>
-                <p class="m-0">
-                    <span class="bold">
-                        Enviar para:
-                    </span>
-                     ${!!informations.sendToStage ? informations.sendToStage : 'Não alterar estágio'}
-                </p>
-                <p class="m-0">
-                    <span class="bold">
-                        Pessoas que devo marcar:
-                    </span>
-                     ${!!informations.tagUser ? informations.tagUser?.join(',') : 'Não precisa marcar ninguém'}
-                </p>
-                <hr>
-                <div>
-                    <h5 class="bold">
-                        Template
-                    </h5>
-                    <div id="${stage.stage}">
-                        ${informations.template}
-                    </div>
-                    <button id="liveToastBtn" onclick="copyToClipboard('${stage.stage}')" class="btn btn-primary">
-                        Copiar
-                    </button>
-                    <hr>
-                    <h5 class="bold">
-                        Instruções
-                    </h5>
-                    <p class="p-3">
-                        ${informations.instructions}
-                    </p>
-                </div>
-            </div>
-        `
-    }
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

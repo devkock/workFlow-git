@@ -1,0 +1,37 @@
+[
+  {
+    "stage": "Code Ready",
+    "class": "btn btn-secondary",
+    "project": "test-automation",
+    "informations": {
+      "source": ["In Progress"],
+      "author": "DEVELOPER",
+      "template": "<p className=\"m-0\">{color:blue}*#CODE_READY*{color}\n</p>\n<p className=\"m-0\">*1) O que foi feito?*\n</p><p className=\"m-0\">(Descrever aqui de forma breve o que foi alterado, corrigido)\n</p>\n\n\n<p className=\"m-0\">\n*2)Qual o local alterado/impactado?*\n</p><p className=\"m-0\">- Detalhar o(s) projetos que tiveram alterações)\n</p><p className=\"m-0\">- (Descreva as primitivas, processos etc. que sofreram alteração e/ou impacto)\n</p>\n\n\n<p className=\"m-0\">\n*3) Depende de algum processo ou parametrização?*\n</p><p className=\"m-0\">(Para que esta alteração/implementação funcione, é necessário fazer algum processo e/ou parametrização? Descreva o que é preciso fazer para habilitar a funcionalidade/rotina)\n</p><p className=\"m-0\">\n*4) Impacto*\n</p><p className=\"m-0\">Categoria: {color:green}*Baixo*{color} {color:orange}*Médio*{color} {color:red}*Alto*{color}\n</p><p className=\"m-0\">\n*5) Todos os critérios de aceite foram atendidos?*\n</p><p className=\"m-0\">(/) - Critério 01\n</p><p className=\"m-0\">(i) - Critério 02 será atendido na demanda HCMNPC-9999, conforme definido com o Analista de Qualidade\n</p><p className=\"m-0\">\n*6) Foi realizada a validação de todos os campos obrigatórios bem como campos com valores inválidos?*\n</p><p className=\"m-0\">() Sim () Não\n</p><p className=\"m-0\">\n*7) Observações:*\n</p><p className=\"m-0\">(i) Nenhuma\n</p>\n\n<p className=\"m-0\">\n*8) Você registrou as horas trabalhadas na demanda corretamente?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*9) A pipeline do merge request passou e não possui erros e/ou code smells a serem corrigidos?*\n</p><p className=\"m-0\">() Sim  () Não\n</p>",
+      "flagged": false,
+      "changeAssigned": true,
+      "assigned": "UNASSIGNED",
+      "sendToStage": "To Do Code Review",
+      "instructions": "Usado ao término do processo de desenvolvimento da tarefa, afim de registrar \"O que?\" foi desenvolvido, \"Como?\" deverá ser testado, e \"Onde?\" ocorreram as alterações, afim de servir como base para o \"TESTER\" possa elaborar o roteiro de testes."
+    }
+  },
+  {
+    "stage": "Code Review Approved",
+    "class": "btn btn-success",
+    "project": "test-automation",
+    "informations": {
+      "source": ["Code Review", "Review"],
+      "author": "REVIEWER",
+      "template": "<p class=\"m-0\">    *{color:#8eb021}#CODE_REVIEW_APPROVED{color}*\n</p>\n<p class=\"m-0\">    *To:* @developer\n</p>\n<p className=\"m-0\">\n*1) Todos os apontamentos feitos pelos SonarQube foram devidamente corrigidos?*\n</p><p className=\"m-0\">Se houver pontos marcados como: {color:red}+Não Resolvido+{color},{color:red}+Falso Positivo+{color}, {color:red}+Não será corrigido+{color}, deverá ser solicitado ao programador que realize todos os apontamentos feitos correções. \n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*SonarQube Report Link:*\n</p><p className=\"m-0\">\n*2)  O desenvolvedor criou testes validando todos os campos obrigatórios ou que contenham validações?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*3) Todos os merge-requests foram aprovados no GitLab?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*4) Você registrou as horas trabalhadas na demanda corretamente?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*APPROVED* ()\n</p>\n",
+      "flagged": false,
+      "changeAssigned": true,
+      "assigned": "UNASSIGNED",
+      "tagUser": [
+        "DEVELOPER",
+        "TESTER"
+      ],
+      "sendToStage": "To Do Review",
+      "instructions": "Usado para informar ao desenvolvedor, que as alterações solicitadas na etapa de Code Review foram aprovadas.\nOBS.: Marcar o \"TESTER\" somente quando a tarefa estiver na coluna de \"Review\".\nEnviar a tarefa para \"To Do Review\" somente se o status atual dela for: \"Code Review\""
+    }
+  }
+]
+  

@@ -1,0 +1,70 @@
+.gridButtons {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 640px) {
+    .gridButtons {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gridButtons {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+.show {
+    display: flex !important;
+    flex-direction: column;
+}
+
+#result {
+    background-color: #e9ecef;
+}
+
+.border-separator {
+    border: 1px solid black;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.story {
+    background-color: blueviolet;
+    color: white;
+}
+
+.tamplete {
+    background-color: cadetblue;
+    color: white;
+}
+
+.kaizen {
+    background-color: darkkhaki;
+}
+
+.documentation {
+    background-color: purple;
+    color: white;
+}
+
+.translation {
+    background-color: black;
+    color: white;
+}
+
+.contract {
+    background-color: #654982;
+    color: white;
+}
+
+.homolog {
+    background-color: #205081;
+    color: white;
+}

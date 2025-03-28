@@ -1,0 +1,57 @@
+[
+    {
+      "stage": "Breach contract",
+      "class": "btn contract",
+      "project": "develop",
+      "informations": {
+        "source": ["In Progress"],
+        "template": "<p class=\"m-0\">  *{color:#654982}#BREACH_OF_CONTRACT{color}*\n</p>\n<p class=\"m-0\">    *To:* @tester1, @tester2\n</p>\n<p className=\"m-0\">\n*1°) Quais foram os projetos em que houveram quebra de contrato?*\n</p><p className=\"m-0\">- Descrever aqui os projetos\n</p><p className=\"m-0\">\n*2) Descrever quais foram os pontos de impacto:*\n</p><p className=\"m-0\">- Descrever aqui os pontos/rotinas afetadas",
+        "author": "DEVELOPER",
+        "flagged": false,
+        "changeAssigned": true,
+        "assigned": "UNASSIGNED",
+        "sendToStage": "To Do Code Review",
+        "tagUser": [
+          "TESTER",
+          "ANALYST"
+        ],
+        "instructions": "Utilizado para alertar sobre a necessidade quebrar o contrato de funcionamento de uma primitiva/componente. Com esta orientação, QA's poderam mitigar e avaliar os impactos gerados nos testes automatizados e demais rotinas do sistemas"
+      }
+    },
+    {
+      "stage": "Code Review Changed",
+      "class": "btn btn-dark",
+      "project": "develop",
+      "informations": {
+        "source": ["Code Review", "Review"],
+        "author": "REVIEWER",
+        "template": "<p class=\"m-0\">    *{color:orange}#CODE_REVIEW_CHANGED{color}*\n</p>\n<p class=\"m-0\">    *To:* @developer, @tester\n</p>\n<p class=\"m-0\">    (Evidenciar de forma breve que o code review foi finalizado)\n</p>",
+        "flagged": true,
+        "changeAssigned": true,
+        "assigned": "DEVELOPER",
+        "tagUser": [
+          "DEVELOPER",
+          "TESTER"
+        ],
+        "instructions": "Usado para informar sobre a necessidade de algum ajuste e/ou correção no código, aos envolvidos no processo.\nOBS.: Marcar o \"TESTER\" somente quando a tarefa estiver na coluna de \"Review\""
+      }
+    },
+    {
+      "stage": "Rework Changed",
+      "class": "btn btn-warning",
+      "project": "develop",
+      "informations": {
+        "source": ["Code Review", "Review"],
+        "author": "DEVELOPER",
+        "template": "<p class=\"m-0\">    *{color:#f6c342}#REWORK_CHANGED{color}*\n</p>\n<p class=\"m-0\">    *To:* @reviewer, @tester\n</p>\n<p class=\"m-0\">    (Adicionar informações importantes sobre a correção)\n</p>\n",
+        "flagged": true,
+        "changeAssigned": true,
+        "assigned": "UNASSIGNED",
+        "tagUser": [
+          "REVIEWER",
+          "TESTER"
+        ],
+        "instructions": "Usado para informar ao reviewer, que as alterações solicitadas na etapa de Code Review foram verificadas.\nOBS.: Marcar o \"TESTER\" somente quando a tarefa estiver na coluna de \"Review\""
+      }
+    }
+  ]

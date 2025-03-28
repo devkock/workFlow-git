@@ -1,0 +1,36 @@
+[
+    {
+        "stage": "Code Ready",
+        "class": "btn btn-secondary",
+        "project": "frontend",
+        "informations": {
+          "source": ["In Progress"],
+          "author": "DEVELOPER",
+          "template": "<p className=\"m-0\">{color:blue}*#CODE_READY*{color}\n</p>\n<p className=\"m-0\">*1) O que foi feito?*\n</p><p className=\"m-0\">(Descrever aqui de forma breve o que foi alterado, corrigido)\n</p>\n\n\n<p className=\"m-0\">\n*2)Qual o local alterado/impactado?*\n</p><p className=\"m-0\">- Detalhar o(s) projetos que tiveram alterações)\n</p><p className=\"m-0\">- (Descreva as telas, web services, processos etc. que sofreram alteração/impacto)\n</p>\n\n\n<p className=\"m-0\">\n*3) Depende de algum processo ou parametrização?*\n</p><p className=\"m-0\">(Para que esta alteração/implementação funcione, é necessário fazer algum processo e/ou parametrização? Descreva o que é preciso fazer para habilitar a funcionalidade/rotina)\n</p><p className=\"m-0\">\n*4) Impacto*\n</p><p className=\"m-0\">Categoria: {color:green}*Baixo*{color} {color:orange}*Médio*{color} {color:red}*Alto*{color}\n</p><p className=\"m-0\">\n*5) Foram adicionadas as chaves para a tradução na subtask correspondente?*\n</p>\n<p className=\"m-0\">() Sim () Não se aplica\n</p><p className=\"m-0\">\n*6) Todos os critérios de aceite foram atendidos?*\n</p><p className=\"m-0\">(/) - Critério 01\n</p><p className=\"m-0\">(i) - Critério 02 será atendido na demanda HCMNPC-9999, conforme definido com o Analista de Sistemas\n</p><p className=\"m-0\">\n*7) Foram adicionados os identificadores únicos nos componentes criados e/ou modificados?*\n</p><p className=\"m-0\">() Sim () Não se aplica\n</p><p className=\"m-0\">\n*8) Foi realizado a validação da implementação com o protótipo de alta fidelidade?*\n</p><p className=\"m-0\">() Sim () Não se aplica\n</p>\n\n<p className=\"m-0\">\n*9) Foi criada a documentação do componente criado no showcase?*\n</p><p className=\"m-0\">() Sim () Não se aplica\n</p><p className=\"m-0\">\n*10) Como testar?*\n</p><p className=\"m-0\">(Descrever aqui o que precisa ser feito para ser testado)\n</p><p className=\"m-0\">\n*11) Observações:*\n</p><p className=\"m-0\">(i) Nenhuma\n</p><p className=\"m-0\">\n*12) Você registrou as horas trabalhadas na demanda corretamente?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*13) Você preencheu corretamente o check-list de abertura do merge-request?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*14) A pipeline do merge request passou e não possui erros e/ou codesmells a serem corrigidos?*\n</p><p className=\"m-0\">() Sim  () Não\n</p>",
+          "flagged": false,
+          "changeAssigned": true,
+          "assigned": "UNASSIGNED",
+          "sendToStage": "To Do Code Review",
+          "instructions": "Usado ao término do processo de desenvolvimento da tarefa, afim de registrar \"O que?\" foi desenvolvido, \"Como?\" deverá ser testado, e \"Onde?\" ocorreram as alterações, afim de servir como base para o \"TESTER\" possa elaborar o roteiro de testes."
+        }
+      },
+      {
+        "stage": "Code Review Approved",
+        "class": "btn btn-success",
+        "project": "frontend",
+        "informations": {
+          "source": ["Code Review", "Review"],
+          "author": "REVIEWER",
+          "template": "<p class=\"m-0\">    *{color:#8eb021}#CODE_REVIEW_APPROVED{color}*\n</p>\n<p class=\"m-0\">    *To:* @developer\n</p>\n<p className=\"m-0\">\n*1) O check-list de abertura do merge-request foi preenchido corretamente?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*2) Todos os apontamentos feitos pelos SonarQube foram devidamente corrigidos?*\n</p><p className=\"m-0\">Se houver pontos marcados como: {color:red}+Não Resolvido+{color},{color:red}+Falso Positivo+{color}, {color:red}+Não será corrigido+{color}, deverá ser solicitado ao programador que realize todos os apontamentos feitos correções.\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*SonarQube Report Link:*\n</p><p className=\"m-0\">\n*3) O desenvolvedor adicionou os identificadores únicos nos componentes criados e/ou modificados?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*4) Todos os merge-requests foram aprovados no GitLab?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*5) Você registrou as horas trabalhadas na demanda corretamente?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*APPROVED* ()\n</p>\n",
+          "flagged": false,
+          "changeAssigned": true,
+          "assigned": "UNASSIGNED",
+          "tagUser": [
+            "DEVELOPER",
+            "TESTER"
+          ],
+          "sendToStage": "To Do Review",
+          "instructions": "Usado para informar ao desenvolvedor, que as alterações solicitadas na etapa de Code Review foram aprovadas.\nOBS.: Marcar o \"TESTER\" somente quando a tarefa estiver na coluna de \"Review\".\nEnviar a tarefa para \"To Do Review\" somente se o status atual dela for: \"Code Review\""
+        }
+      }
+]

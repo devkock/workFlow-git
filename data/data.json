@@ -191,5 +191,33 @@
       "sendToStage": "Done",
       "instructions": "Utilizado para informar as personas envolvidas no processo, que a demanda se encontra devidamente liberada no ambiente de Homologação."
     }
+  },
+  {
+    "stage": "Documentação",
+    "class": "btn documentation",
+    "informations": {
+      "source": ["Backlog"],
+      "template": "<p class=\"m-0\">{panel:title=DOCUMENTAÇÃO — Template a ser preenchido pelo Dev quando a entrega se tratar de uma +alteração+ ou de uma +implementação+ no sistema|borderStyle=solid|borderColor=#FFA500|titleColor=#FFFFFF|titleBGColor=#FFA500|bgColor=#E5E5E5}\n</p>\n<p class=\"m-0\">\n{color:#f79232}*Atenção*: todas as perguntas deste template devem ser respondidas. Caso você não tenha a resposta de uma ou mais questões, acione o Analista de Negócios (P.O.) ou demais envolvidos na entrega para fornecer as informações.{color}\n</p>\n<p class=\"m-0\">\n1 — *O que foi alterado/implementado no sistema?*\n</p>\n<p class=\"m-0\">\n- 1.1 — *Houve alguma alteração ou criação de web service?*\n</p>\n<p class=\"m-0\">\n2 — *Por que esta alteração/implementação foi realizada?*\n</p>\n<p class=\"m-0\">\n3 — *Qual o local alterado/impactado?*\n</p>\n<p class=\"m-0\">\n4 — *Documentação de processo*\n</p>\n<p class=\"m-0\">\n5 — *Documentação técnica*\n</p>\n<p class=\"m-0\">\n6 — *Inserir prints*\n</p>\n<p class=\"m-0\">\n7 — *O que deve ser divulgado no Notas da Versão?*\n</p>\n<p class=\"m-0\">\n8 — *Esta entrega também é válida para outras versões do sistema?*\n</p>\n<p class=\"m-0\">\n{panel}\n</p>",
+      "author": "",
+      "flagged": false,
+      "changeAssigned": false,
+      "assigned": "UNASSIGNED",
+      "sendToStage": "__",
+      "instructions": "Template a ser preenchido pelo Dev quando a entrega se tratar de uma +alteração+ ou de uma +implementação+ no sistema"
+    }
+  },
+  {
+    "stage": "Tradução",
+    "class": "btn translation",
+    "informations": {
+      "source": ["Backlog"],
+      "template": "<p class=\"m-0\">{panel:title=TRADUÇÃO — Template a ser preenchido pelo Dev quando a entrega se tratar de uma tradução do sistema|borderStyle=solid|borderColor=#205081|titleColor=#FFFFFF|titleBGColor=#205081|bgColor=#E5E5E5}\n</p>\n<p class=\"m-0\">\n{color:#205081}*Atenção*: *todas* as perguntas deste template devem ser respondidas. Caso você não tenha a resposta de uma ou mais questões, acione o Analista de Negócios (P.O.) ou demais envolvidos na entrega para fornecer as informações.{color}\n</p>\n<p class=\"m-0\">\n1 — *Para quais línguas a tradução deve ser realizada?*\n</p>\n<p class=\"m-0\">\n_(Marque com um (/) para quais línguas as informações precisam ser traduzidas)_\n</p>\n<p class=\"m-0\">\n(/) en_US - Inglês (Estados Unidos)\n</p>\n<p class=\"m-0\">\n(/) es_CO - Espanhol (Colômbia)\n</p>\n<p class=\"m-0\">\n2 — *Qual é o contexto da tradução?*\n</p>\n<p class=\"m-0\">\n3 — *As informações em língua portuguesa já foram revisadas por alguém da área de Documentação Técnica e/ou da equipe de UX?*\n</p>\n<p class=\"m-0\">\n4 — *Inserir prints*\n</p>\n<p class=\"m-0\">\nN/A\n</p>\n<p class=\"m-0\">\n5 — *Inserir as informações que precisam ser traduzidas*\n</p>\n<p class=\"m-0\">\n{panel}\n</p>",
+      "author": "",
+      "flagged": false,
+      "changeAssigned": false,
+      "assigned": "UNASSIGNED",
+      "sendToStage": "to do",
+      "instructions": "Template a ser preenchido pelo Dev se tratar de uma tradução do sistema"
+    }
   }
 ]

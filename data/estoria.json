@@ -1,0 +1,36 @@
+[
+    {
+        "stage": "Code Ready",
+        "class": "btn btn-secondary",
+        "project": "estoria",
+        "informations": {
+          "source": ["In Progress"],
+          "author": "DEVELOPER",
+          "template": "<p className=\"m-0\">{color:blue}*#CODE_READY*{color}\n</p>\n<p className=\"m-0\">*1) Todas as subtasks de tradução foram enviadas para o time responsável?*\n</p>\n<p className=\"m-0\">() Sim () Não se aplica\n</p><p className=\"m-0\">\n*2) Todas as quebras de contrato foram devidamente documentadas na estória?*\n</p>\n<p className=\"m-0\">() Sim () Não se aplica\n</p><p className=\"m-0\">\n*3) Os merge requests não possuem conflitos e a pipeline passou sem erros?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n_*Merge request link:*_\n</p><p className=\"m-0\">_*Merge request link:*_\n</p><p className=\"m-0\">_*Merge request link:*_\n</p>",
+          "flagged": false,
+          "changeAssigned": true,
+          "assigned": "UNASSIGNED",
+          "sendToStage": "To Do Code Review",
+          "instructions": "Usado ao término do processo de desenvolvimento da tarefa, afim de registrar \"O que?\" foi desenvolvido, \"Como?\" deverá ser testado, e \"Onde?\" ocorreram as alterações, afim de servir como base para o \"TESTER\" possa elaborar o roteiro de testes."
+        }
+      },
+      {
+        "stage": "Code Review Approved",
+        "class": "btn btn-success",
+        "project": "estoria",
+        "informations": {
+          "source": ["Code Review", "Review"],
+          "author": "REVIEWER",
+          "template": "<p class=\"m-0\">    *{color:#8eb021}#CODE_REVIEW_APPROVED{color}*\n</p>\n<p class=\"m-0\">    *To:* @developer, @tester\n</p>\n<p className=\"m-0\">\n*1) Todos os apontamentos feitos pelos SonarQube foram devidamente corrigidos?*\n</p><p className=\"m-0\">\n</p><p className=\"m-0\">Se houver pontos marcados como: {color:red}+Não Resolvido+{color},{color:red}+Falso Positivo+{color}, {color:red}+Não será corrigido+{color}, deverá ser solicitado ao programador que realize todos os apontamentos feitos correções.\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n_*SonarQube Report Link:*_ (Adicionar link do report gerado pelo Sonar)\n</p><p className=\"m-0\">\n*2) Todos os merge-requests foram aprovados no GitLab?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*3) Você registrou as horas trabalhadas na demanda corretamente?*\n</p><p className=\"m-0\">() Sim  () Não\n</p><p className=\"m-0\">\n*APPROVED* ()\n</p>\n",
+          "flagged": false,
+          "changeAssigned": true,
+          "assigned": "UNASSIGNED",
+          "tagUser": [
+            "DEVELOPER",
+            "TESTER"
+          ],
+          "sendToStage": "To Do Review",
+          "instructions": "Usado para informar ao desenvolvedor, que as alterações solicitadas na etapa de Code Review foram aprovadas.\nOBS.: Marcar o \"TESTER\" somente quando a tarefa estiver na coluna de \"Review\".\nEnviar a tarefa para \"To Do Review\" somente se o status atual dela for: \"Code Review\""
+        }
+      }
+]
