@@ -46,8 +46,8 @@ function showTemplate(status, project) {
         'Develop': './data/develop.json',
         'Test-Automation': './data/test-automation.json',
         'Backend': './data/backend.json',
-        'Frontend': './data/frontend.json',
         'Estoria': './data/estoria.json',
+        'Frontend': './data/frontend.json',
         'QA': './data/qa.json',
         'Flow': './data/flow.json'
     };
